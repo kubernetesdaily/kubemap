@@ -25,7 +25,7 @@ Visit the [wiki](https://github.com/michaelneuper/hugo-texify3/wiki) for informa
 This is a fork of the [TeXify2](https://github.com/weastur/hugo-texify2) theme.
 
 
-{{< markmap "example-id" >}}
+{{< markmap >}}
 # Root
 ## Branch 1
 ### Sub-branch 1
