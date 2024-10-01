@@ -1,8 +1,8 @@
 title = "KubeMap"
 description = "MarkMap for Kubernetes - A visual guide to Kubernetes"
 footnote = """
-Powered by  <a class=link href=https://gohugo.io target=_blank rel=noopener>Hugo</a> | 
-Theme <a class=link href=https://github.com/michaelneuper/hugo-texify3 target=_blank rel=noopener>TeXify3</a>
+Powered by  <a class=link href=https://kubedaily.io target=_blank rel=noopener>kubedaily</a> | 
+Theme <a class=link href=https://kubernetesdaily.github.io/kubemap/ target=_blank rel=noopener>KubeMap</a>
 """
 keywords = ["hugo", "latex", "theme", "blog", "texify", "texify2", "texify3", "michael", "neuper"]
 customCSS = []
