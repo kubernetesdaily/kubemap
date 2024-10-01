@@ -1,4 +1,4 @@
-baseURL = "https://michaelneuper.github.io/hugo-texify3/"
+baseURL = "https://kubernetesdaily.github.io/kubemap/"
 disqusShortname = ""
 enableGitInfo = true
 enableRobotsTXT = true
@@ -7,7 +7,7 @@ languageCode = "en"
 paginate = 5
 rssLimit = 10
 theme = "hugo-texify3"
-title = "TeXify3"
+title = "KubeMap"
 
 [author]
 name = "Michael Neuper"
@@ -18,11 +18,11 @@ tags = "tags"
 categories = "categories"
 
 [params]
-title="TeXify3"
-description = "TeXify3 - A LaTeX-style hugo theme with the gruvbox color scheme for personal blogging"
+title="KubeMap"
+description = "MarkMap for Kubernetes - A visual guide to Kubernetes" 
 footnote = """
-Powered by  <a class=link href=https://gohugo.io target=_blank rel=noopener>Hugo</a> | 
-Theme <a class=link href=https://github.com/michaelneuper/hugo-texify3 target=_blank rel=noopener>TeXify3</a>
+Powered by  <a class=link href=https://kubedaily.io target=_blank rel=noopener>kubedaily</a> | 
+Theme <a class=link href=https://kubernetesdaily.github.io/kubemap/ target=_blank rel=noopener>KubeMap</a>
 """
 customCSS = []
 customJS = []
