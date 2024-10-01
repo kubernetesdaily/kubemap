@@ -25,11 +25,3 @@ Visit the [wiki](https://github.com/michaelneuper/hugo-texify3/wiki) for informa
 This is a fork of the [TeXify2](https://github.com/weastur/hugo-texify2) theme.
 
 
-{{< markmap >}}
-# Root
-## Branch 1
-### Sub-branch 1
-- Leaf 1
-- Leaf 2
-## Branch 2
-{{< /markmap >}}
