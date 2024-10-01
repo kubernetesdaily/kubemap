@@ -1,4 +1,4 @@
-name = "TeXify3"
+name = "KubeMap"
 license = "MIT"
 licenselink = "https://github.com/michaelneuper/hugo-texify3/blob/master/LICENSE"
 description = "A latex-style hugo theme with the gruvbox color scheme for personal blogging"
