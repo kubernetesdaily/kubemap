@@ -1,0 +1,9 @@
+<div id="markmap-{{ .Get 0 }}" style="width:100%; height:500px"></div>
+<script type="module">
+  import { markmap } from 'https://cdn.jsdelivr.net/npm/markmap-lib@0.12.2/dist/view.mjs';
+  const content = `{{ .Inner | safeHTML }}`;
+  const options = {};
+  const mm = markmap(`#markmap-{{ .Get 0 }}`, options);
+  mm.setData(mm.transform(content));
+  mm.fit();
+</script>
