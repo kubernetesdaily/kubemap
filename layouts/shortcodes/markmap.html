@@ -4,34 +4,86 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Markmap</title>
+    <title>Markmap with Zoom</title>
     <style>
       svg.markmap {
         width: 100%;
         height: 100vh;
+      }
+      #controls {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+      }
+      button {
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #555;
       }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.16"></script>
   </head>
   <body>
     <div class="markmap">
-        <script type="text/template">
-          ---
-          markmap:
-            maxWidth: 300
-            colorFreezeLevel: 2
-          ---
-      
-          {{ .Inner }}
-        </script>
-      </div>
-      
-      <style>
-        svg.markmap {
-          width: 100%;
-          height: 100vh;
+      <script type="text/template">
+        ---
+        markmap:
+          maxWidth: 300
+          colorFreezeLevel: 2
+          initialExpandLevel: 1
+        ---
+        {{ .Inner }} 
+      </script>
+    </div>
+
+    <!-- Zoom In/Out buttons -->
+    <div id="controls">
+      <button id="zoomIn">Zoom In +</button>
+      <button id="zoomOut">Zoom Out -</button>
+      <button id="resetZoom">Reset</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.16"></script>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Get the SVG element once it is generated
+        const svg = document.querySelector('svg.markmap');
+        let viewBoxValues = svg.getAttribute("viewBox").split(" ").map(Number);
+
+        // Zoom in/out factors
+        const zoomFactor = 0.8;
+        const zoomOutFactor = 1.2;
+
+        function setZoom(factor) {
+          viewBoxValues[2] *= factor;  // Modify the width of the viewBox
+          viewBoxValues[3] *= factor;  // Modify the height of the viewBox
+          svg.setAttribute("viewBox", viewBoxValues.join(" "));
         }
-      </style>
-      
-      <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.16"></script>
-    </body>      
+
+        // Zoom In button
+        document.getElementById('zoomIn').addEventListener('click', function () {
+          setZoom(zoomFactor);
+        });
+
+        // Zoom Out button
+        document.getElementById('zoomOut').addEventListener('click', function () {
+          setZoom(zoomOutFactor);
+        });
+
+        // Reset Zoom button
+        document.getElementById('resetZoom').addEventListener('click', function () {
+          svg.setAttribute("viewBox", "0 0 800 600");
+        });
+      });
+    </script>
+  </body>
+</html>

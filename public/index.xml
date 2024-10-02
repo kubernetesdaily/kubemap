@@ -8,11 +8,11 @@
     <language>en</language>
     <lastBuildDate>Tue, 05 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>K8s Introduction</title>
-      <link>//localhost:1313/posts/markdown/</link>
+      <title>Emoji Support</title>
+      <link>//localhost:1313/posts/intro/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/posts/markdown/</guid>
+      <guid>//localhost:1313/posts/intro/</guid>
       <description>&lt;!DOCTYPE html&gt;
 &lt;html lang=&#34;en&#34;&gt;
   &lt;head&gt;
@@ -35,208 +35,354 @@
           markmap:
             maxWidth: 300
             colorFreezeLevel: 2
+            initialExpandLevel: 1
           ---
       
           
+          
+               
+     # Kubernetes Introduction
+     
+         ## Kubernetes Overview
+         - What is Kubernetes?
+             - Container Orchestration Platform
+             - Manage containerized workloads and services
+             - Open-source project by Google
+         - Features of Kubernetes
+             - Self-healing
+             - Automated Rollouts and Rollbacks
+             - Service Discovery and Load Balancing
+             - Horizontal Scaling
+             - Declarative Configuration
+         - Architecture Overview
+             - Master-Worker Node Architecture
+             - Decoupled control and data planes
+             - Cluster Management
+         - Cloud-native &amp;amp; Microservices
+             - Kubernetes in a Cloud-native Environment
+             - Microservices Architecture
+     
+         ## Kubernetes Core Components
+         - Master Node
+             - **API Server**
+                 - Frontend of the control plane
+                 - Serves REST operations
+             - **etcd (Cluster Store)**
+                 - Distributed key-value store
+                 - Stores cluster state and configurations
+             - **Controller Manager**
+                 - Node controller
+                 - Job controller
+                 - Replication controller
+                 - Endpoints controller
+             - **Scheduler**
+                 - Assigns Pods to worker nodes based on resources
+                 - Factors: Affinity, Taints, Priorities
+         - Worker Nodes
+             - **Kubelet**
+                 - Communicates with API Server
+                 - Ensures containers are running
+             - **Kube-proxy**
+                 - Manages networking rules on nodes
+                 - Directs traffic between pods
+             - **Container Runtime**
+                 - Supports Docker, Containerd, CRI-O
+                 - Runs and manages containers
+     
+         ## Kubernetes Objects
+         - **Pods**
+             - Smallest deployable unit in Kubernetes
+             - Single or multiple containers in one logical unit
+             - **Pod Lifecycle**
+                 - Pending
+                 - Running
+                 - Succeeded
+                 - Failed
+                 - CrashLoopBackOff
+         - **Services**
+             - Defines how to expose a Pod or group of Pods
+             - **ClusterIP**
+                 - Default internal-only service
+             - **NodePort**
+                 - Exposes a service on each node’s IP at a static port
+             - **LoadBalancer**
+                 - Exposes service externally via a cloud provider&amp;#39;s LB
+             - **Headless Services**
+                 - Allows direct access to Pods without load balancing
+         - **Deployments**
+             - Manages stateless applications
+             - **Rolling Updates**
+                 - Update Pods gradually with zero downtime
+             - **Rollbacks**
+                 - Reverts to a previous version of deployment
+             - **Scaling**
+                 - Adjust the number of replicas
+         - **ConfigMaps &amp;amp; Secrets**
+             - ConfigMaps store non-sensitive configuration data
+             - Secrets store sensitive information (e.g., API tokens)
+         - **Volumes**
+             - Pods can have multiple types of storage
+             - **Persistent Volumes (PVs)**
+                 - Cluster-wide resources for storage
+             - **Persistent Volume Claims (PVCs)**
+                 - Request specific storage by applications
+     
+         ## Networking in Kubernetes
+         - **Container Networking Model (CNM)**
+             - All containers within a Pod share the same network namespace
+         - **CNI Plugins**
+             - Provide networking for Kubernetes Pods
+             - Examples: **Calico**, **Flannel**, **Weave**, **Cilium**
+         - **Ingress Controllers**
+             - Manage external access to services
+             - Define routing rules for traffic
+         - **Network Policies**
+             - Controls which Pods can communicate with each other
+             - Implement fine-grained traffic control
+     
+         ## Kubernetes Controllers
+         - **ReplicationController**
+             - Ensures a specified number of Pod replicas are running
+         - **ReplicaSets**
+             - Newer form of ReplicationController
+             - Works with Deployments for rolling updates
+         - **StatefulSets**
+             - Manages stateful applications with unique network IDs
+             - Used for databases, distributed systems
+         - **DaemonSets**
+             - Ensures a copy of a Pod runs on all (or some) nodes
+         - **Jobs &amp;amp; CronJobs**
+             - **Job**
+                 - Ensures a task is completed
+             - **CronJob**
+                 - Manages time-based job scheduling
+     
+         ## Kubernetes Scheduling
+         - **Scheduler Basics**
+             - Assigns Pods to available nodes
+             - Looks at resource requests and availability
+         - **Node Affinity**
+             - Assign Pods to specific nodes based on labels
+         - **Taints and Tolerations**
+             - Taints: Marks a node that will only accept specific Pods
+             - Tolerations: Allows Pods to tolerate specific taints
+     
+         ## Kubernetes Ecosystem
+         - **Helm (Package Manager)**
+             - Manage Kubernetes applications as charts
+             - Simplifies deployment and management of apps
+         - **Kubernetes Operators**
+             - Automates deployment and management of applications
+             - Example: Prometheus Operator, MongoDB Operator
+         - **CNCF Projects**
+             - Prometheus (Monitoring)
+             - Istio (Service Mesh)
+             - Fluentd (Logging)
+     
+         ## Security in Kubernetes
+         - **Role-Based Access Control (RBAC)**
+             - Define roles and permissions for users
+             - Granular control over resource access
+         - **Network Policies**
+             - Restrict Pod communication for better isolation
+         - **Pod Security Policies (PSPs)**
+             - Enforces security contexts for Pods (e.g., root user restrictions)
+         - **Secrets Management**
+             - Store sensitive data like passwords or tokens securely
+         - **Policy as Code**
+             - Tools like **OPA/Gatekeeper** for enforcing policies declaratively
+     
+         ## Storage in Kubernetes
+         - **Storage Classes**
+             - Define how storage should be dynamically provisioned
+             - Example: SSD, HDD storage types
+         - **Dynamic Provisioning**
+             - Allows storage to be automatically provisioned and attached
+         - **Stateful Apps**
+             - Requires stable storage, managed through StatefulSets
+     
+         ## Kubernetes Tools
+         - **kubectl (CLI tool)**
+             - Command-line interface for interacting with the cluster
+             - Supports operations like apply, get, delete, etc.
+         - **Minikube / Kind (Local Clusters)**
+             - Tools for running Kubernetes clusters locally
+             - Minikube runs a single-node cluster
+             - Kind uses Docker containers to create Kubernetes clusters
+         - **Kustomize**
+             - Template-free way to customize Kubernetes objects
+             - Native support with `kubectl`
+     
+         ## Kubernetes Deployment Strategies
+         - **Blue/Green Deployment**
+             - Two environments: Blue (current) and Green (new)
+             - Traffic switch between environments for zero downtime
+         - **Canary Deployment**
+             - Roll out new versions to a small subset of users
+             - Gradually increase based on metrics
+         - **A/B Testing**
+             - Direct traffic to different versions for testing and comparison
+     
+         ## Monitoring &amp;amp; Logging
+         - **Prometheus &amp;amp; Grafana**
+             - Prometheus for metrics collection and alerting
+             - Grafana for visualization
+         - **Logging Solutions**
+             - **ELK Stack** (Elasticsearch, Logstash, Kibana)
+             - **Fluentd** for logging aggregation
+     
+         ## Kubernetes Autoscaling
+         - **Horizontal Pod Autoscaler (HPA)**
+             - Automatically scales Pods based on resource usage
+         - **Vertical Pod Autoscaler (VPA)**
+             - Adjusts the resource requests of a running Pod
+         - **Cluster Autoscaler**
+             - Adds or removes nodes from the cluster based on demand
+     
+     
+          
 
-# Kubernetes Introduction
-
-## Kubernetes Overview
-- What is Kubernetes?
-  - Container Orchestration Platform
-  - Manage containerized workloads and services
-  - Open-source project by Google
-- Features of Kubernetes
-  - Self-healing
-  - Automated Rollouts and Rollbacks
-  - Service Discovery and Load Balancing
-  - Horizontal Scaling
-  - Declarative Configuration
-- Architecture Overview
-  - Master-Worker Node Architecture
-  - Decoupled control and data planes
-  - Cluster Management
-- Cloud-native &amp; Microservices
-  - Kubernetes in a Cloud-native Environment
-  - Microservices Architecture
-
-## Kubernetes Core Components
-- Master Node
-  - **API Server**
-    - Frontend of the control plane
-    - Serves REST operations
-  - **etcd (Cluster Store)**
-    - Distributed key-value store
-    - Stores cluster state and configurations
-  - **Controller Manager**
-    - Node controller
-    - Job controller
-    - Replication controller
-    - Endpoints controller
-  - **Scheduler**
-    - Assigns Pods to worker nodes based on resources
-    - Factors: Affinity, Taints, Priorities
-- Worker Nodes
-  - **Kubelet**
-    - Communicates with API Server
-    - Ensures containers are running
-  - **Kube-proxy**
-    - Manages networking rules on nodes
-    - Directs traffic between pods
-  - **Container Runtime**
-    - Supports Docker, Containerd, CRI-O
-    - Runs and manages containers
-
-## Kubernetes Objects
-- **Pods**
-  - Smallest deployable unit in Kubernetes
-  - Single or multiple containers in one logical unit
-  - **Pod Lifecycle**
-    - Pending
-    - Running
-    - Succeeded
-    - Failed
-    - CrashLoopBackOff
-- **Services**
-  - Defines how to expose a Pod or group of Pods
-  - **ClusterIP**
-    - Default internal-only service
-  - **NodePort**
-    - Exposes a service on each node’s IP at a static port
-  - **LoadBalancer**
-    - Exposes service externally via a cloud provider&#39;s LB
-  - **Headless Services**
-    - Allows direct access to Pods without load balancing
-- **Deployments**
-  - Manages stateless applications
-  - **Rolling Updates**
-    - Update Pods gradually with zero downtime
-  - **Rollbacks**
-    - Reverts to a previous version of deployment
-  - **Scaling**
-    - Adjust the number of replicas
-- **ConfigMaps &amp; Secrets**
-  - ConfigMaps store non-sensitive configuration data
-  - Secrets store sensitive information (e.g., API tokens)
-- **Volumes**
-  - Pods can have multiple types of storage
-  - **Persistent Volumes (PVs)**
-    - Cluster-wide resources for storage
-  - **Persistent Volume Claims (PVCs)**
-    - Request specific storage by applications
-
-## Networking in Kubernetes
-- **Container Networking Model (CNM)**
-  - All containers within a Pod share the same network namespace
-- **CNI Plugins**
-  - Provide networking for Kubernetes Pods
-  - Examples: **Calico**, **Flannel**, **Weave**, **Cilium**
-- **Ingress Controllers**
-  - Manage external access to services
-  - Define routing rules for traffic
-- **Network Policies**
-  - Controls which Pods can communicate with each other
-  - Implement fine-grained traffic control
-
-## Kubernetes Controllers
-- **ReplicationController**
-  - Ensures a specified number of Pod replicas are running
-- **ReplicaSets**
-  - Newer form of ReplicationController
-  - Works with Deployments for rolling updates
-- **StatefulSets**
-  - Manages stateful applications with unique network IDs
-  - Used for databases, distributed systems
-- **DaemonSets**
-  - Ensures a copy of a Pod runs on all (or some) nodes
-- **Jobs &amp; CronJobs**
-  - **Job**
-    - Ensures a task is completed
-  - **CronJob**
-    - Manages time-based job scheduling
-
-## Kubernetes Scheduling
-- **Scheduler Basics**
-  - Assigns Pods to available nodes
-  - Looks at resource requests and availability
-- **Node Affinity**
-  - Assign Pods to specific nodes based on labels
-- **Taints and Tolerations**
-  - Taints: Marks a node that will only accept specific Pods
-  - Tolerations: Allows Pods to tolerate specific taints
-
-## Kubernetes Ecosystem
-- **Helm (Package Manager)**
-  - Manage Kubernetes applications as charts
-  - Simplifies deployment and management of apps
-- **Kubernetes Operators**
-  - Automates deployment and management of applications
-  - Example: Prometheus Operator, MongoDB Operator
-- **CNCF Projects**
-  - Prometheus (Monitoring)
-  - Istio (Service Mesh)
-  - Fluentd (Logging)
-
-## Security in Kubernetes
-- **Role-Based Access Control (RBAC)**
-  - Define roles and permissions for users
-  - Granular control over resource access
-- **Network Policies**
-  - Restrict Pod communication for better isolation
-- **Pod Security Policies (PSPs)**
-  - Enforces security contexts for Pods (e.g., root user restrictions)
-- **Secrets Management**
-  - Store sensitive data like passwords or tokens securely
-- **Policy as Code**
-  - Tools like **OPA/Gatekeeper** for enforcing policies declaratively
-
-## Storage in Kubernetes
-- **Storage Classes**
-  - Define how storage should be dynamically provisioned
-  - Example: SSD, HDD storage types
-- **Dynamic Provisioning**
-  - Allows storage to be automatically provisioned and attached
-- **Stateful Apps**
-  - Requires stable storage, managed through StatefulSets
-
-## Kubernetes Tools
-- **kubectl (CLI tool)**
-  - Command-line interface for interacting with the cluster
-  - Supports operations like apply, get, delete, etc.
-- **Minikube / Kind (Local Clusters)**
-  - Tools for running Kubernetes clusters locally
-  - Minikube runs a single-node cluster
-  - Kind uses Docker containers to create Kubernetes clusters
-- **Kustomize**
-  - Template-free way to customize Kubernetes objects
-  - Native support with `kubectl`
-
-## Kubernetes Deployment Strategies
-- **Blue/Green Deployment**
-  - Two environments: Blue (current) and Green (new)
-  - Traffic switch between environments for zero downtime
-- **Canary Deployment**
-  - Roll out new versions to a small subset of users
-  - Gradually increase based on metrics
-- **A/B Testing**
-  - Direct traffic to different versions for testing and comparison
-
-## Monitoring &amp; Logging
-- **Prometheus &amp; Grafana**
-  - Prometheus for metrics collection and alerting
-  - Grafana for visualization
-- **Logging Solutions**
-  - **ELK Stack** (Elasticsearch, Logstash, Kibana)
-  - **Fluentd** for logging aggregation
-
-## Kubernetes Autoscaling
-- **Horizontal Pod Autoscaler (HPA)**
-  - Automatically scales Pods based on resource usage
-- **Vertical Pod Autoscaler (VPA)**
-  - Adjusts the resource requests of a running Pod
-- **Cluster Autoscaler**
-  - Adds or removes nodes from the cluster based on demand
-
+        &lt;/script&gt;
+      &lt;/div&gt;
+      
+      &lt;style&gt;
+        svg.markmap {
+          width: 100%;
+          height: 100vh;
+        }
+      &lt;/style&gt;
+      
+      &lt;script src=&#34;https://cdn.jsdelivr.net/npm/markmap-autoloader@0.16&#34;&gt;&lt;/script&gt;
+    &lt;/body&gt;      
+</description>
+    </item>
+    
+    <item>
+      <title>k8s arch</title>
+      <link>//localhost:1313/posts/k8s-architecture/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/k8s-architecture/</guid>
+      <description>&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&#34;UTF-8&#34; /&gt;
+    &lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34; /&gt;
+    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34; /&gt;
+    &lt;title&gt;Markmap&lt;/title&gt;
+    &lt;style&gt;
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    &lt;/style&gt;
+    &lt;script src=&#34;https://cdn.jsdelivr.net/npm/markmap-autoloader@0.16&#34;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&#34;markmap&#34;&gt;
+        &lt;script type=&#34;text/template&#34;&gt;
+          ---
+          markmap:
+            maxWidth: 300
+            colorFreezeLevel: 2
+            initialExpandLevel: 1
+          ---
+      
+          
+          
+               
+     # Kubernetes Architecture
+     
+     ## Master Node
+     
+     ### API Server
+     - Frontend for the control plane
+     - Receives and validates REST requests
+     - Communicates with etcd and other components
+     
+     ### etcd
+     - Key-value store
+     - Stores configuration data
+     - Maintains cluster state and configurations
+     
+     ### Controller Manager
+     - Handles controllers
+       - Node Controller
+       - Replication Controller
+       - Endpoint Controller
+       - Service Account Controller
+     
+     ### Scheduler
+     - Assigns pods to nodes
+     - Determines the best node based on resource requirements
+     
+     ## Worker Nodes
+     
+     ### Kubelet
+     - Ensures the containers are running
+     - Communicates with the API server
+     - Monitors pod health
+     
+     ### Kube-proxy
+     - Handles networking for services
+     - Manages network rules on the nodes
+     
+     ### Container Runtime
+     - Runs the containers
+       - Examples: Docker, Containerd, CRI-O
+     
+     ## Add-ons
+     
+     ### DNS
+     - Cluster DNS to resolve services
+     
+     ### Dashboard
+     - Web-based UI for Kubernetes management
+     
+     ### Monitoring
+     - Prometheus, Grafana for cluster monitoring
+     
+     ### Logging
+     - Fluentd, ElasticSearch for logging and log aggregation
+     
+     ## Pod
+     
+     ### Containers
+     - Lightweight, executable units of software
+     
+     ### Volumes
+     - Persistent or ephemeral storage attached to the pods
+     
+     ## Services
+     
+     ### ClusterIP
+     - Internal communication within the cluster
+     
+     ### NodePort
+     - External access via the node&amp;#39;s IP address
+     
+     ### LoadBalancer
+     - Integrates with external load balancers
+     
+     ## Persistent Storage
+     
+     ### Persistent Volumes (PVs)
+     - Storage resources provisioned by an admin
+     
+     ### Persistent Volume Claims (PVCs)
+     - Requests for storage by users or pods
+     
+     ## Networking
+     
+     ### CNI (Container Network Interface)
+     - Plugins for networking (Flannel, Calico, etc.)
+     
+     ### Network Policies
+     - Control traffic flow at the IP address or port level
+     
+     
+     
+          
 
         &lt;/script&gt;
       &lt;/div&gt;
