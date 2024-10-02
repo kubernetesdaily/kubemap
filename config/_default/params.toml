@@ -4,7 +4,7 @@ footnote = """
 Powered by  <a class=link href=https://kubedaily.com target=_blank rel=noopener>kubedaily</a> | 
 Theme <a class=link href=https://kubernetesdaily.github.io/kubemap/ target=_blank rel=noopener>KubeMap</a>
 """
-keywords = ["hugo", "latex", "theme", "blog", "texify", "texify2", "texify3", "michael", "neuper"]
+keywords = ["hugo", "latex", "theme", "k8sapi", "texify", "texify2", "texify3", "michael", "neuper"]
 customCSS = []
 customJS = []
 dateFormat = "2 January 2006"

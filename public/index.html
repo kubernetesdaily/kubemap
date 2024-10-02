@@ -21,7 +21,7 @@
 
   
   
-  <meta name="keywords" content='hugo latex theme blog texify texify2 texify3 michael neuper'>
+  <meta name="keywords" content='hugo latex theme k8sapi texify texify2 texify3 michael neuper'>
   
 
   
@@ -51,8 +51,8 @@
   <meta property="og:url" content="//localhost:1313/">
   <meta property="og:site_name" content="KubeMap">
   <meta property="og:title" content="KubeMap">
-  <meta property="og:description" content="A minimal, $\LaTeX$-style hugo theme for personal blogging. Visit the wiki for information on how to install and configure.
-Features Any comment engine (giscus, remark42, hyvor, etc.) Mermaid support DuckDuckGo search Buymeacoffee widget Auto numbered subtitles Disqus &amp; Google Analytics Render math equations with KaTeX PostCSS to make writing CSS easier Dark mode toggle Citations Acknowledgement This is a fork of the TeXify2 theme.">
+  <meta property="og:description" content="KubeMap - MarkMap for Kubernetes A visual guide to Kubernetes that leverages MarkMap to simplify and illustrate Kubernetes concepts, architecture, and resources interactively.
+Table of Contents Introduction Features Installation Usage Visual Overview Supported Kubernetes Concepts Contribution Guidelines License Introduction KubeMap is a project that provides a visual guide to Kubernetes using MarkMap. It serves as a quick reference for Kubernetes concepts, including networking, storage, workloads, and more. Whether you’re a beginner or an experienced Kubernetes user, KubeMap offers an intuitive way to explore Kubernetes architecture.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="website">
 
@@ -65,11 +65,11 @@ Features Any comment engine (giscus, remark42, hyvor, etc.) Mermaid support Duck
   <link rel="alternate" type="application/rss+xml" href="//localhost:1313/index.xml" title="" />
   
   
-  <meta itemprop="description" content="A minimal, $\LaTeX$-style hugo theme for personal blogging. Visit the wiki for information on how to install and configure.
-Features Any comment engine (giscus, remark42, hyvor, etc.) Mermaid support DuckDuckGo search Buymeacoffee widget Auto numbered subtitles Disqus &amp; Google Analytics Render math equations with KaTeX PostCSS to make writing CSS easier Dark mode toggle Citations Acknowledgement This is a fork of the TeXify2 theme.">
+  <meta itemprop="description" content="KubeMap - MarkMap for Kubernetes A visual guide to Kubernetes that leverages MarkMap to simplify and illustrate Kubernetes concepts, architecture, and resources interactively.
+Table of Contents Introduction Features Installation Usage Visual Overview Supported Kubernetes Concepts Contribution Guidelines License Introduction KubeMap is a project that provides a visual guide to Kubernetes using MarkMap. It serves as a quick reference for Kubernetes concepts, including networking, storage, workloads, and more. Whether you’re a beginner or an experienced Kubernetes user, KubeMap offers an intuitive way to explore Kubernetes architecture.">
   <meta itemprop="datePublished" content="2019-02-05T00:00:00+00:00">
   <meta itemprop="dateModified" content="2019-02-05T00:00:00+00:00">
-  <meta itemprop="wordCount" content="64">
+  <meta itemprop="wordCount" content="182">
 
   
   
@@ -91,8 +91,8 @@ Features Any comment engine (giscus, remark42, hyvor, etc.) Mermaid support Duck
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="KubeMap">
-  <meta name="twitter:description" content="A minimal, $\LaTeX$-style hugo theme for personal blogging. Visit the wiki for information on how to install and configure.
-Features Any comment engine (giscus, remark42, hyvor, etc.) Mermaid support DuckDuckGo search Buymeacoffee widget Auto numbered subtitles Disqus &amp; Google Analytics Render math equations with KaTeX PostCSS to make writing CSS easier Dark mode toggle Citations Acknowledgement This is a fork of the TeXify2 theme.">
+  <meta name="twitter:description" content="KubeMap - MarkMap for Kubernetes A visual guide to Kubernetes that leverages MarkMap to simplify and illustrate Kubernetes concepts, architecture, and resources interactively.
+Table of Contents Introduction Features Installation Usage Visual Overview Supported Kubernetes Concepts Contribution Guidelines License Introduction KubeMap is a project that provides a visual guide to Kubernetes using MarkMap. It serves as a quick reference for Kubernetes concepts, including networking, storage, workloads, and more. Whether you’re a beginner or an experienced Kubernetes user, KubeMap offers an intuitive way to explore Kubernetes architecture.">
 
 
   
@@ -123,10 +123,10 @@ Features Any comment engine (giscus, remark42, hyvor, etc.) Mermaid support Duck
     <span class="nav-bar-item">
       
         <span class="icon"><svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M2.88,16.88a3,3,0,0,0,0,4.24,3,3,0,0,0,4.24,0,3,3,0,0,0-4.24-4.24Zm2.83,2.83a1,1,0,0,1-1.42-1.42,1,1,0,0,1,1.42,0A1,1,0,0,1,5.71,19.71ZM5,12a1,1,0,0,0,0,2,5,5,0,0,1,5,5,1,1,0,0,0,2,0,7,7,0,0,0-7-7ZM5,8a1,1,0,0,0,0,2,9,9,0,0,1,9,9,1,1,0,0,0,2,0,11.08,11.08,0,0,0-3.22-7.78A11.08,11.08,0,0,0,5,8Zm10.61.39A15.11,15.11,0,0,0,5,4,1,1,0,0,0,5,6,13,13,0,0,1,18,19a1,1,0,0,0,2,0A15.11,15.11,0,0,0,15.61,8.39Z"/></svg>
+<path d="M17,11H16a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm0,4H16a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2ZM11,9h6a1,1,0,0,0,0-2H11a1,1,0,0,0,0,2ZM21,3H7A1,1,0,0,0,6,4V7H3A1,1,0,0,0,2,8V18a3,3,0,0,0,3,3H18a4,4,0,0,0,4-4V4A1,1,0,0,0,21,3ZM6,18a1,1,0,0,1-2,0V9H6Zm14-1a2,2,0,0,1-2,2H7.82A3,3,0,0,0,8,18V5H20Zm-9-4h1a1,1,0,0,0,0-2H11a1,1,0,0,0,0,2Zm0,4h1a1,1,0,0,0,0-2H11a1,1,0,0,0,0,2Z"/></svg>
 </span>
       
-      <a class="link" href="/index.xml">RSS</a>
+      <a class="link" href="/posts/">kubeMap</a>
     </span>
     
     <span class="nav-bar-item">
@@ -135,7 +135,7 @@ Features Any comment engine (giscus, remark42, hyvor, etc.) Mermaid support Duck
 <path d="M2.88,16.88a3,3,0,0,0,0,4.24,3,3,0,0,0,4.24,0,3,3,0,0,0-4.24-4.24Zm2.83,2.83a1,1,0,0,1-1.42-1.42,1,1,0,0,1,1.42,0A1,1,0,0,1,5.71,19.71ZM5,12a1,1,0,0,0,0,2,5,5,0,0,1,5,5,1,1,0,0,0,2,0,7,7,0,0,0-7-7ZM5,8a1,1,0,0,0,0,2,9,9,0,0,1,9,9,1,1,0,0,0,2,0,11.08,11.08,0,0,0-3.22-7.78A11.08,11.08,0,0,0,5,8Zm10.61.39A15.11,15.11,0,0,0,5,4,1,1,0,0,0,5,6,13,13,0,0,1,18,19a1,1,0,0,0,2,0A15.11,15.11,0,0,0,15.61,8.39Z"/></svg>
 </span>
       
-      <a class="link" href="/k8sapi/">K8s API</a>
+      <a class="link" href="/index.xml">RSS</a>
     </span>
     
     <span class="nav-bar-item">
@@ -154,25 +154,38 @@ Features Any comment engine (giscus, remark42, hyvor, etc.) Mermaid support Duck
 <main class="grid-container">
     <div id="content" class="index">
         
-            <p>A minimal, $\LaTeX$-style hugo theme for personal blogging.
-Visit the <a href="https://github.com/michaelneuper/hugo-texify3/wiki">wiki</a> for information on how to install and configure.</p>
-<hr>
-<h2 id="features">Features</h2>
+            <h1 id="kubemap---markmap-for-kubernetes">KubeMap - MarkMap for Kubernetes</h1>
+<p>A <strong>visual guide to Kubernetes</strong> that leverages MarkMap to simplify and illustrate Kubernetes concepts, architecture, and resources interactively.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
 <ul>
-<li>Any comment engine (giscus, remark42, hyvor, etc.)</li>
-<li><a href="https://mermaid.js.org">Mermaid</a> support</li>
-<li>DuckDuckGo search</li>
-<li>Buymeacoffee widget</li>
-<li>Auto numbered subtitles</li>
-<li><a href="https://disqus.com/">Disqus</a> &amp; Google Analytics</li>
-<li>Render math equations with <a href="https://katex.org/">KaTeX</a></li>
-<li><a href="https://postcss.org/">PostCSS</a> to make writing CSS easier</li>
-<li>Dark mode toggle</li>
-<li>Citations</li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#visual-overview">Visual Overview</a></li>
+<li><a href="#supported-kubernetes-concepts">Supported Kubernetes Concepts</a></li>
+<li><a href="#contribution-guidelines">Contribution Guidelines</a></li>
+<li><a href="#license">License</a></li>
 </ul>
 <hr>
-<h2 id="acknowledgement">Acknowledgement</h2>
-<p>This is a fork of the <a href="https://github.com/weastur/hugo-texify2">TeXify2</a> theme.</p>
+<h2 id="introduction">Introduction</h2>
+<p><strong>KubeMap</strong> is a project that provides a <strong>visual guide to Kubernetes</strong> using <strong>MarkMap</strong>. It serves as a quick reference for Kubernetes concepts, including networking, storage, workloads, and more. Whether you&rsquo;re a beginner or an experienced Kubernetes user, KubeMap offers an intuitive way to explore Kubernetes architecture.</p>
+<h3 id="why-kubemap">Why KubeMap?</h3>
+<ul>
+<li>Visualize Kubernetes concepts interactively.</li>
+<li>Quickly grasp how different components of Kubernetes work together.</li>
+<li>Navigate complex topics easily with a MarkMap-based diagram.</li>
+<li>Learn through a <strong>top-down view</strong> of the Kubernetes ecosystem.</li>
+</ul>
+<h2 id="features">Features</h2>
+<ul>
+<li>🌐 <strong>Interactive MarkMap Visualization</strong>: Browse Kubernetes topics with an interactive, clickable map.</li>
+<li>📚 <strong>Comprehensive Coverage</strong>: Covers essential Kubernetes topics like Pods, Services, Deployments, etc.</li>
+<li>🔍 <strong>Deep Dive Support</strong>: Provides links to detailed documentation for further learning.</li>
+<li>📈 <strong>Customizable</strong>: Easily add or modify topics to suit your use case.</li>
+</ul>
+<h2 id="license">License</h2>
+<p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
 
         
     </div>
@@ -191,7 +204,7 @@ Visit the <a href="https://github.com/michaelneuper/hugo-texify3/wiki">wiki</a> 
         <ul class="nav-list sidenav">
             
             <li>
-                <a href="//localhost:1313/tags/emoji/">Emoji</a>
+                <a href="//localhost:1313/tags/k8s/">K8s</a>
             </li>
             
         </ul>

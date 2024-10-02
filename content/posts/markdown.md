@@ -1,43 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title></title>
-    <link>//localhost:1313/</link>
-    <description>Recent content on </description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 05 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>K8s Introduction</title>
-      <link>//localhost:1313/posts/markdown/</link>
-      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/posts/markdown/</guid>
-      <description>&lt;!DOCTYPE html&gt;
-&lt;html lang=&#34;en&#34;&gt;
-  &lt;head&gt;
-    &lt;meta charset=&#34;UTF-8&#34; /&gt;
-    &lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34; /&gt;
-    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34; /&gt;
-    &lt;title&gt;Markmap&lt;/title&gt;
-    &lt;style&gt;
-      svg.markmap {
-        width: 100%;
-        height: 100vh;
-      }
-    &lt;/style&gt;
-    &lt;script src=&#34;https://cdn.jsdelivr.net/npm/markmap-autoloader@0.16&#34;&gt;&lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div class=&#34;markmap&#34;&gt;
-        &lt;script type=&#34;text/template&#34;&gt;
-          ---
-          markmap:
-            maxWidth: 300
-            colorFreezeLevel: 2
-          ---
-      
-          
+---
+author: "Sangam Birdar"
+title: "K8s Introduction"
+date: "2019-02-05"
+description: "Markdown map"
+tags: [
+    "k8s",
+]
+---
+
+{{< markmap >}}
 
 # Kubernetes Introduction
 
@@ -56,7 +27,7 @@
   - Master-Worker Node Architecture
   - Decoupled control and data planes
   - Cluster Management
-- Cloud-native &amp; Microservices
+- Cloud-native & Microservices
   - Kubernetes in a Cloud-native Environment
   - Microservices Architecture
 
@@ -104,7 +75,7 @@
   - **NodePort**
     - Exposes a service on each node’s IP at a static port
   - **LoadBalancer**
-    - Exposes service externally via a cloud provider&#39;s LB
+    - Exposes service externally via a cloud provider's LB
   - **Headless Services**
     - Allows direct access to Pods without load balancing
 - **Deployments**
@@ -115,7 +86,7 @@
     - Reverts to a previous version of deployment
   - **Scaling**
     - Adjust the number of replicas
-- **ConfigMaps &amp; Secrets**
+- **ConfigMaps & Secrets**
   - ConfigMaps store non-sensitive configuration data
   - Secrets store sensitive information (e.g., API tokens)
 - **Volumes**
@@ -149,7 +120,7 @@
   - Used for databases, distributed systems
 - **DaemonSets**
   - Ensures a copy of a Pod runs on all (or some) nodes
-- **Jobs &amp; CronJobs**
+- **Jobs & CronJobs**
   - **Job**
     - Ensures a task is completed
   - **CronJob**
@@ -221,8 +192,8 @@
 - **A/B Testing**
   - Direct traffic to different versions for testing and comparison
 
-## Monitoring &amp; Logging
-- **Prometheus &amp; Grafana**
+## Monitoring & Logging
+- **Prometheus & Grafana**
   - Prometheus for metrics collection and alerting
   - Grafana for visualization
 - **Logging Solutions**
@@ -237,21 +208,4 @@
 - **Cluster Autoscaler**
   - Adds or removes nodes from the cluster based on demand
 
-
-        &lt;/script&gt;
-      &lt;/div&gt;
-      
-      &lt;style&gt;
-        svg.markmap {
-          width: 100%;
-          height: 100vh;
-        }
-      &lt;/style&gt;
-      
-      &lt;script src=&#34;https://cdn.jsdelivr.net/npm/markmap-autoloader@0.16&#34;&gt;&lt;/script&gt;
-    &lt;/body&gt;      
-</description>
-    </item>
-    
-  </channel>
-</rss>
+{{< /markmap >}}

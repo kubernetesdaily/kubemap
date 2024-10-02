@@ -1,9 +1,37 @@
-<div id="markmap-{{ .Get 0 }}" style="width:100%; height:500px"></div>
-<script type="module">
-  import { markmap } from 'https://cdn.jsdelivr.net/npm/markmap-lib@0.12.2/dist/view.mjs';
-  const content = `{{ .Inner | safeHTML }}`;
-  const options = {};
-  const mm = markmap(`#markmap-{{ .Get 0 }}`, options);
-  mm.setData(mm.transform(content));
-  mm.fit();
-</script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markmap</title>
+    <style>
+      svg.markmap {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.16"></script>
+  </head>
+  <body>
+    <div class="markmap">
+        <script type="text/template">
+          ---
+          markmap:
+            maxWidth: 300
+            colorFreezeLevel: 2
+          ---
+      
+          {{ .Inner }}
+        </script>
+      </div>
+      
+      <style>
+        svg.markmap {
+          width: 100%;
+          height: 100vh;
+        }
+      </style>
+      
+      <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.16"></script>
+    </body>      
